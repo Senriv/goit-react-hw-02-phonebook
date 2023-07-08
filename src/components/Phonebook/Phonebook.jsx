@@ -13,8 +13,7 @@ class Phonebook extends React.Component {
   };
 
   formSubmitHandler = data => {
-    console.log(data);
-    if (this.state.contacts.find(contact => contact.name === data.name)) {
+    if (this.state.contacts.find(contact => contact.name.toLowerCase() === data.name.toLowerCase())) {
       alert(`${data.name} is already in contacts!`);
       return;
     }
